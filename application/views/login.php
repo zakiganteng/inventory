@@ -39,7 +39,7 @@
                 <input type="password" class="form-control" placeholder="Password" required="" />
               </div>
               <div>
-                <a class="btn btn-default submit" href="barang-lihat.html">Log in</a>
+                <a class="btn btn-default submit" href="<?php base_url();?>Barang">Log in</a>
               </div>
 
               <div class="clearfix"></div>
