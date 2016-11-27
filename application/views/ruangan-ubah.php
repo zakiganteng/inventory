@@ -53,44 +53,44 @@
 
             <br />
 
-            <!-- sidebar menu -->
+           <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
                 <h3>Inventory</h3>
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-square"></i> Barang <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="barang-lihat.html">Lihat Barang</a></li>                      
-                      <li><a href="barang-ubah.html">Ubah Barang</a></li>
-                      <li><a href="barang-tambah.html">Tambah Barang</a></li>
-                      <li><a href="barang-hapus.html">Hapus Barang</a></li>
+                      <li><a href="<?php echo base_url();?>Barang">Lihat Barang</a></li>                      
+                      <li><a href="<?php echo base_url();?>Barang/edit">Ubah Barang</a></li>
+                      <li><a href="<?php echo base_url();?>Barang/buat">Tambah Barang</a></li>
+                      <li><a href="<?php echo base_url();?>Barang/hapus">Hapus Barang</a></li>
                     </ul>
                   </li>                  
                   <li><a><i class="fa fa-bookmark"></i> Ruangan <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="ruangan-lihat.html">Lihat Ruangan</a></li>
-                      <li><a href="ruangan-ubah.html">Ubah Ruangan</a></li>
-                      <li><a href="ruangan-tambah.html">Tambah Ruangan</a></li>
-                      <li><a href="ruangan-hapus.html">Hapus Ruangan</a></li>
+                      <li><a href="<?php echo base_url();?>Ruangan">Lihat Ruangan</a></li>
+                      <li><a href="<?php echo base_url();?>Ruangan/edit">Ubah Ruangan</a></li>
+                      <li><a href="<?php echo base_url();?>Ruangan/buat">Tambah Ruangan</a></li>
+                      <li><a href="<?php echo base_url();?>Ruangan/hapus">Hapus Ruangan</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-building"></i> Gedung <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="gedung-lihat.html">Lihat Gedung</a></li>
-                      <li><a href="gedung-ubah.html">Ubah Gedung</a></li>
-                      <li><a href="gedung-tambah.html">Tambah Gedung</a></li>
-                      <li><a href="gedung-hapus.html">Hapus Gedung</a></li>
+                      <li><a href="<?php echo base_url();?>Gedung">Lihat Gedung</a></li>
+                      <li><a href="<?php echo base_url();?>Gedung/edit">Ubah Gedung</a></li>
+                      <li><a href="<?php echo base_url();?>Gedung/buat">Tambah Gedung</a></li>
+                      <li><a href="<?php echo base_url();?>Gedung/hapus">Hapus Gedung</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-edit"></i> Permintaan <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="permintaan-konfirmasi.html">Konfirmasi Permintaan</a></li>
+                      <li><a href="<?php echo base_url();?>Permintaan">Konfirmasi Permintaan</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-archive"></i> Status <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="kondisi-barang.html">Kondisi Barang</a></li>
-                      <li><a href="kondisi-ruangan.html">Kondisi Ruangan</a></li>
+                      <li><a href="<?php echo base_url();?>Kondisi">Kondisi Barang</a></li>
+                      <li><a href="<?php echo base_url();?>Kondisi/ruangan">Kondisi Ruangan</a></li>
                     </ul>
                   </li>
                   <!-- <li><a><i class="fa fa-table"></i> Pelaporan <span class="fa fa-chevron-down"></span></a>
@@ -108,6 +108,7 @@
 
             </div>
             <!-- /sidebar menu -->
+
 
             
           </div>
