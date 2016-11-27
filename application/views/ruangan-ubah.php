@@ -188,7 +188,7 @@
                           <td>A</td>
                           <td>FIF</td>
                           <td>20</td>
-                          <td><a href="ruangan-ubah-2.html">Edit</a></td>
+                          <td><a href="<?php echo base_url();?>Ruangan/edit2">Edit</a></td>
                         </tr>
                         <tr>
                           <td>2</td>
@@ -196,7 +196,7 @@
                           <td>A</td>
                           <td>FIF</td>
                           <td>20</td>
-                          <td><a href="ruangan-ubah-2.html">Edit</a></td>
+                          <td><a href="<?php echo base_url();?>Ruangan/edit2">Edit</a></td>
                         </tr>
                         <tr>
                           <td>3</td>
@@ -204,7 +204,7 @@
                           <td>A</td>
                           <td>FIF</td>
                           <td>20</td>                          
-                          <td><a href="ruangan-ubah-2.html">Edit</a></td>
+                          <td><a href="<?php echo base_url();?>Ruangan/edit2">Edit</a></td>
                         </tr>
                       </tbody>
                     </table>

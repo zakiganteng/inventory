@@ -184,19 +184,19 @@
                           <td>1</td>
                           <td>A</td>
                           <td>20</td>
-                          <td><a href="gedung-ubah-2.html">Edit</a></td>
+                          <td><a href="<?php echo base_url();?>Gedung/edit2">Edit</a></td>
                         </tr>
                         <tr>
                           <td>2</td>
                           <td>B</td>
                           <td>20</td>
-                          <td><a href="gedung-ubah-2.html">Edit</a></td>
+                          <td><a href="<?php echo base_url();?>Gedung/edit2">Edit</a></td>
                         </tr>
                         <tr>
                           <td>3</td>
                           <td>C</td>
                           <td>20</td>
-                          <td><a href="gedung-ubah-2.html">Edit</a></td>
+                          <td><a href="<?php echo base_url();?>Gedung/edit2">Edit</a></td>
                         </tr>
                       </tbody>
                     </table>
