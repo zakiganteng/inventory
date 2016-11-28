@@ -165,12 +165,11 @@
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Pilih Ruangan</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                          <select class="form-control" name='ruangan'>
-                            <option>Pilih Ruangan</option>
-                            <option>A310</option>
-                            <option>B210</option>
-                            <option>B110</option>
-                            <option>A210</option>
+                          <select class="form-control" placeholder="Pilih Ruangan" name='ruangan'>
+                            <?php foreach ($datane as $key => $value): ?>
+                            <option><?php echo $value['namaRuangan'] ?></option>  
+                            <?php endforeach ?>
+                            
                           </select>
                         </div>
                       </div>

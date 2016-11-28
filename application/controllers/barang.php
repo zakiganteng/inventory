@@ -7,6 +7,7 @@ class Barang extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('barangModel');
+		$this->load->model('ruanganModel');
 	}
 	public function index()
 	{
@@ -32,7 +33,8 @@ class Barang extends CI_Controller {
 		$this->load->view('barang-ubah',$data);
 	}
 	public function edit2($data_)
-	{
+	{	
+		$data['datane'] = $this->ruanganModel->selectRuangan();
 		$res = $this->barangModel->getWhere($data_);
 		$data['namaBarang'] = $res[0]['namaBarang'];
 		$data['ruangan'] = $res[0]['namaRuangan'];
@@ -45,7 +47,8 @@ class Barang extends CI_Controller {
 	}
 	public function buat()
 	{
-		$this->load->view('barang-tambah');
+		$data['datane'] = $this->ruanganModel->selectRuangan();
+		$this->load->view('barang-tambah',$data);
 	}
 	public function doHapus($data_)
 	{
