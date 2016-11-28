@@ -10,6 +10,7 @@ class Gedung extends CI_Controller {
 	}
 	public function index()
 	{
+		$data['namaUser'] = $this->session->userdata('namaUser');
 		$data['datane'] = $this->gedungModel->selectGedung();
 		$this->load->view('gedung-lihat',$data);
 	}
@@ -21,22 +22,26 @@ class Gedung extends CI_Controller {
 	}
 	public function edit()
 	{
+		$data['namaUser'] = $this->session->userdata('namaUser');
 		$data['datane'] = $this->gedungModel->selectGedung();
 		$this->load->view('gedung-ubah',$data);
 	}
 	public function edit2($data_)
 	{
+		$data['namaUser'] = $this->session->userdata('namaUser');
 		$res = $this->gedungModel->getWhere($data_);
 		$data['namaGedung'] = $res[0]['namaGedung'];
 		$this->load->view('gedung-ubah-2',$data);
 	}
 	public function hapus()
 	{
+		$data['namaUser'] = $this->session->userdata('namaUser');
 		$data['datane'] = $this->gedungModel->selectGedung();
 		$this->load->view('gedung-hapus',$data);
 	}
 	public function buat()
 	{
+		$data['nnamaUser'] = $this->session->userdata('namaUser');
 		$this->load->view('gedung-tambah');
 	}
 	public function doHapus($data_)
