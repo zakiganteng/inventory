@@ -10,7 +10,8 @@ class Ruangan extends CI_Controller {
 		$this->load->model('userModel');
 	}
 	public function index()
-	{
+	{	
+		$data['namaUser'] = $this->session->userdata('namaUser');
 		$data['datane'] = $this->ruanganModel->selectRuangan();
 		$this->load->view('ruangan-lihat',$data);
 	}
@@ -24,11 +25,13 @@ class Ruangan extends CI_Controller {
 	}
 	public function edit()
 	{
+		$data['namaUser'] = $this->session->userdata('namaUser');
 		$data['datane'] = $this->ruanganModel->selectRuangan();
 		$this->load->view('ruangan-ubah',$data);
 	}
 	public function edit2($data_)
 	{
+		$data['namaUser'] = $this->session->userdata('namaUser');
 		$data['datane'] = $this->gedungModel->selectGedung();
 		$data['datana'] = $this->userModel->selectUser();
 		$res = $this->ruanganModel->getWhere($data_);
@@ -38,11 +41,13 @@ class Ruangan extends CI_Controller {
 	}
 	public function hapus()
 	{
+		$data['namaUser'] = $this->session->userdata('namaUser');
 		$data['datane'] = $this->ruanganModel->selectRuangan();
 		$this->load->view('ruangan-hapus',$data);
 	}
 	public function buat()
 	{	
+		$data['namaUser'] = $this->session->userdata('namaUser');
 		$data['datane'] = $this->gedungModel->selectGedung();
 		$data['datana'] = $this->userModel->selectUser();
 		$this->load->view('ruangan-tambah',$data);

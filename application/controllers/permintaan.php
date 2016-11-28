@@ -10,6 +10,7 @@ class Permintaan extends CI_Controller {
 	}
 	public function index()
 	{
+		$data['namaUser'] = $this->session->userdata('namaUser');
 		$data['datane'] = $this->permintaanModel->selectPermintaan();
 		$this->load->view('permintaan-konfirmasi',$data);
 	}
