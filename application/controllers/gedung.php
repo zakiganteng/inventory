@@ -6,18 +6,23 @@ class Gedung extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('barangModel');
+		$this->load->model('gedungModel');
 	}
-
 	public function index()
-	{	
-
-		$data['data'] = $this->barangModel->selectBarang();
+	{
+		$data['datane'] = $this->gedungModel->selectGedung();
 		$this->load->view('gedung-lihat',$data);
+	}
+	public function doInsert(){
+		$data['namaGedung'] = $this->input->post('namaGedung');
+		$data['statusGedung'] = $this->input->post('optionsRadios');
+		$this->gedungModel->tambahGedung($data);
+		redirect(base_url().'gedung/buat/');
 	}
 	public function edit()
 	{
-		$this->load->view('gedung-ubah');
+		$data['datane'] = $this->gedungModel->selectGedung();
+		$this->load->view('gedung-ubah',$data);
 	}
 	public function edit2()
 	{
@@ -25,7 +30,8 @@ class Gedung extends CI_Controller {
 	}
 	public function hapus()
 	{
-		$this->load->view('gedung-hapus');
+		$data['datane'] = $this->gedungModel->selectGedung();
+		$this->load->view('gedung-hapus',$data);
 	}
 	public function buat()
 	{

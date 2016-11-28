@@ -7,22 +7,22 @@ class gedungModel extends CI_Model {
                 parent::__construct();
         }
 
-        public function get_last_ten_entries()
+        public function selectGedung()
         {
                 $query = $this->db->get('gedung');
-                return $query->result();
+                return $query->result_array();
         }
 
-        public function insert_entry($data)
+        public function tambahGedung($data)
         {
-                $query = $this->db->insert('gedung', $data);
-                return $query->result();
+                $this->db->insert('gedung',$data);
         }
 
-        public function update_entry($data)
+        public function editGedung($data)
         {
                 $this->db->where('idGedung', $data['idGedung']);
                 $this->db->update('gedung', $data);
+
         }
 
 }

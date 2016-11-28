@@ -2,14 +2,22 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Kondisi extends CI_Controller {
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('barangModel');
 
+		$this->load->model('ruanganModel');
+	}
 	public function index()
 	{
-		$this->load->view('kondisi-barang');
+		$data['datane'] = $this->barangModel->selectBarang();
+		$this->load->view('kondisi-barang',$data);
 	}
 	public function ruangan()
 	{
-		$this->load->view('kondisi-ruangan');
+		$data['datane'] = $this->ruanganModel->selectRuangan();
+		$this->load->view('kondisi-ruangan',$data);
 	}
 
 }

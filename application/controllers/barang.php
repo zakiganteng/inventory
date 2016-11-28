@@ -14,15 +14,22 @@ class Barang extends CI_Controller {
 		$this->load->view('barang-lihat',$data);
 	}
 	public function doInsert(){
-		$data['namaBarang'] = $this->input->post('namaBarang');
-		$data['idRuangan'] = $this->input->post('ruangan');
-		$data['statusBarang'] = $this->input->post('optionsRadios');
-		$this->barangModel->tambahBarang($data);
+		$variable = $this->input->post('jumlahBarang');
+		for ($i=0; $i < $variable; $i++) { 
+			# code...
+			$data['namaBarang'] = $this->input->post('namaBarang');
+			$data['namaRuangan'] = $this->input->post('ruangan');
+			$data['statusBarang'] = $this->input->post('optionsRadios');
+			
+			$this->barangModel->tambahBarang($data);
+		}
+		
 		redirect(base_url().'barang/buat/');
 	}
 	public function edit()
 	{
-		$this->load->view('barang-ubah');
+		$data['datane'] = $this->barangModel->selectBarang();
+		$this->load->view('barang-ubah',$data);
 	}
 	public function edit2()
 	{
@@ -30,7 +37,8 @@ class Barang extends CI_Controller {
 	}
 	public function hapus()
 	{
-		$this->load->view('barang-hapus');
+		$data['datane'] = $this->barangModel->selectBarang();
+		$this->load->view('barang-hapus',$data);
 	}
 	public function buat()
 	{

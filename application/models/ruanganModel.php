@@ -7,22 +7,21 @@ class ruanganModel extends CI_Model {
                 parent::__construct();
         }
 
-        public function get_last_ten_entries()
+        public function selectRuangan()
         {
                 $query = $this->db->get('ruangan');
-                return $query->result();
+                return $query->result_array();
         }
 
-        public function insert_entry($data)
+        public function tambahRuangan($data)
         {
-                $query = $this->db->insert('ruangan', $data);
-                return $query->result();
+                $this->db->insert('ruangan',$data);
         }
 
-        public function update_entry($data)
+        public function editRuangan($data)
         {
                 $this->db->where('idRuangan', $data['idRuangan']);
                 $this->db->update('ruangan', $data);
-        }
 
+        }
 }
