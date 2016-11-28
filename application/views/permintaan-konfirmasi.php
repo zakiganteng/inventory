@@ -181,28 +181,18 @@
                         </tr>
                       </thead>
                       <tbody>
+                      <?php foreach ($datane as $value): ?>
                         <tr>
-                          <td>1</td>
-                          <td>Meja</td>
-                          <td>A310</td>
-                          <td>FIF</td>
+                          <td><?php echo $value['idPermintaan']; ?></td>
+                          <td><?php echo $value['namaBarang']; ?></td>
+                          <td><?php echo $value['idRuangan']; ?></td>
+                          <td><?php echo $value['idUser']; ?></td>
+                          <td><?php echo $value['jumlahBarang']; ?></td>
                           <td><a href="#">Konfirmasi</a></td>
                         </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>Meja</td>
-                          <td>A210</td>
-                          <td>FIF</td>
-                          <td><a href="#">Konfirmasi</a></td>
-                        </tr>
-                        <tr>
-                          <td>3</td>
-                          <td>LCD</td>
-                          <td>A110</td>
-                          <td>FIF</td>
-                          <td><a href="#">Konfirmasi</a></td>
-                        </tr>
+                      <?php endforeach ?>
                       </tbody>
+                      
                     </table>
 
                   </div>

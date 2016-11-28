@@ -180,6 +180,13 @@
                         </div>
                       </div>
 
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Jumlah Barang</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="number" class="form-control" placeholder="Jumlah Barang" name='jumlahBarang'>
+                        </div>
+                      </div>
+
                       
                       <div class="form-group">
                         <label class="col-md-3 col-sm-3 col-xs-12 control-label">Status

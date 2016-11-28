@@ -180,24 +180,14 @@
                         </tr>
                       </thead>
                       <tbody>
+                      <?php foreach ($datane as $value): ?>
                         <tr>
-                          <td>1</td>
-                          <td>meja</td>
-                          <td>A310</td>
+                          <td><?php echo $value['idBarang']; ?></td>
+                          <td><?php echo $value['namaBarang']; ?></td>
+                          <td><?php echo $value['idRuangan']; ?></td>
                           <td><a href=#>Hapus</a></td>
                         </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>meja</td>
-                          <td>A301</td>
-                          <td><a href=#>Hapus</a></td>
-                        </tr>
-                        <tr>
-                          <td>3</td>
-                          <td>meja</td>
-                          <td>A210</td>                       
-                          <td><a href=#>Hapus</a></td>
-                        </tr>
+                      <?php endforeach ?>
                       </tbody>
                     </table>
 

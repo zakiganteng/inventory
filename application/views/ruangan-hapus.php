@@ -182,31 +182,17 @@
                         </tr>
                       </thead>
                       <tbody>
+                      <?php foreach ($datane as $value): ?>
                         <tr>
-                          <td>1</td>
-                          <td>A310</td>
-                          <td>A</td>
-                          <td>FIF</td>
-                          <td>20</td>
+                          <td><?php echo $value['idRuangan']; ?></td>
+                          <td><?php echo $value['namaRuangan']; ?></td>
+                          <td><?php echo $value['idUser']; ?></td>
+                          <td><?php echo $value['idUser']; ?></td>
                           <td><a href=#>Hapus</a></td>
                         </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>A301</td>
-                          <td>A</td>
-                          <td>FIF</td>
-                          <td>20</td>
-                          <td><a href=#>Hapus</a></td>
-                        </tr>
-                        <tr>
-                          <td>3</td>
-                          <td>A210</td>
-                          <td>A</td>
-                          <td>FIF</td>
-                          <td>20</td>                          
-                          <td><a href=#>Hapus</a></td>
-                        </tr>
+                      <?php endforeach ?>
                       </tbody>
+                      
                     </table>
 
                   </div>
