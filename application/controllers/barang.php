@@ -14,11 +14,16 @@ class Barang extends CI_Controller {
 		$this->load->view('barang-lihat',$data);
 	}
 	public function doInsert(){
-		$data['namaBarang'] = $this->input->post('namaBarang');
-		$data['idRuangan'] = $this->input->post('ruangan');
-		$data['statusBarang'] = $this->input->post('optionsRadios');
-		$data['jumlahBarang'] = $this->input->post('jumlahBarang');
-		$this->barangModel->tambahBarang($data);
+		$variable = $this->input->post('jumlahBarang');
+		for ($i=0; $i < $variable; $i++) { 
+			# code...
+			$data['namaBarang'] = $this->input->post('namaBarang');
+			$data['namaRuangan'] = $this->input->post('ruangan');
+			$data['statusBarang'] = $this->input->post('optionsRadios');
+			
+			$this->barangModel->tambahBarang($data);
+		}
+		
 		redirect(base_url().'barang/buat/');
 	}
 	public function edit()

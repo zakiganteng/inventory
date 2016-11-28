@@ -16,7 +16,7 @@ class Gedung extends CI_Controller {
 	public function doInsert(){
 		$data['namaGedung'] = $this->input->post('namaGedung');
 		$data['statusGedung'] = $this->input->post('optionsRadios');
-		$this->barangModel->tambahBarang($data);
+		$this->gedungModel->tambahGedung($data);
 		redirect(base_url().'gedung/buat/');
 	}
 	public function edit()

@@ -14,10 +14,10 @@ class Ruangan extends CI_Controller {
 	}
 	public function doInsert(){
 		$data['namaRuangan'] = $this->input->post('namaRuangan');
-		$data['idGedung'] = $this->input->post('namaGedung');
-		$data['idUser'] = $this->input->post('namaFakultas');
+		$data['namaGedung'] = $this->input->post('namaGedung');
+		$data['namaUser'] = $this->input->post('namaFakultas');
 		$data['statusRuangan'] = $this->input->post('optionsRadios');
-		$this->barangModel->tambahBarang($data);
+		$this->ruanganModel->tambahRuangan($data);
 		redirect(base_url().'ruangan/buat/');
 	}
 	public function edit()
