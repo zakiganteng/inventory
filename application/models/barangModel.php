@@ -12,6 +12,14 @@ class barangModel extends CI_Model {
                 $query = $this->db->get('barang');
                 return $query->result_array();
         }
+        public function getWhere($data)
+        {       
+                $this->db->select('*');
+                $this->db->where('idBarang',$data);
+                $this->db->from('barang');
+                $query = $this->db->get();
+                return $query->result_array();
+        }
 
         public function tambahBarang($data)
         {
