@@ -47,6 +47,11 @@ class Barang extends CI_Controller {
 	{
 		$this->load->view('barang-tambah');
 	}
+	public function doHapus($data_)
+	{
+		$this->barangModel->hapusBarang($data_);
+		redirect(base_url().'barang/hapus/');
+	}
 
 }
 

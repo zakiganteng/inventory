@@ -188,7 +188,7 @@
                           <td><?php echo $value['namaGedung']?></td>
                           <td><?php echo $value['namaUser']; ?></td>
                           <td><?php echo $value['idRuangan']; ?></td>
-                          <td><a href="#">Hapus</a></td>
+                          <td><a href="<?php echo base_url().'Ruangan/doHapus/'.$value['idRuangan'];?>">Hapus</a></td>
                         </tr>
                       <?php endforeach ?>
                       </tbody>

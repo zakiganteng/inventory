@@ -24,9 +24,11 @@ class Gedung extends CI_Controller {
 		$data['datane'] = $this->gedungModel->selectGedung();
 		$this->load->view('gedung-ubah',$data);
 	}
-	public function edit2()
+	public function edit2($data_)
 	{
-		$this->load->view('gedung-ubah-2');
+		$res = $this->gedungModel->getWhere($data_);
+		$data['namaGedung'] = $res[0]['namaGedung'];
+		$this->load->view('gedung-ubah-2',$data);
 	}
 	public function hapus()
 	{
@@ -36,6 +38,11 @@ class Gedung extends CI_Controller {
 	public function buat()
 	{
 		$this->load->view('gedung-tambah');
+	}
+	public function doHapus($data_)
+	{
+		$this->gedungModel->hapusGedung($data_);
+		redirect(base_url().'gedung/hapus/');
 	}
 
 }

@@ -25,9 +25,12 @@ class Ruangan extends CI_Controller {
 		$data['datane'] = $this->ruanganModel->selectRuangan();
 		$this->load->view('ruangan-ubah',$data);
 	}
-	public function edit2()
+	public function edit2($data_)
 	{
-		$this->load->view('ruangan-ubah-2');
+		$res = $this->ruanganModel->getWhere($data_);
+		$data['ruangan'] = $res[0]['namaRuangan'];
+		$data['fakultas'] = $res[0]['namaUser'];
+		$this->load->view('ruangan-ubah-2',$data);
 	}
 	public function hapus()
 	{
@@ -37,6 +40,11 @@ class Ruangan extends CI_Controller {
 	public function buat()
 	{
 		$this->load->view('ruangan-tambah');
+	}
+	public function doHapus($data_)
+	{
+		$this->ruanganModel->hapusRuangan($data_);
+		redirect(base_url().'ruangan/hapus/');
 	}
 
 }

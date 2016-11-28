@@ -12,6 +12,14 @@ class gedungModel extends CI_Model {
                 $query = $this->db->get('gedung');
                 return $query->result_array();
         }
+        public function getWhere($data)
+        {       
+                $this->db->select('*');
+                $this->db->where('idgedung',$data);
+                $this->db->from('gedung');
+                $query = $this->db->get();
+                return $query->result_array();
+        }
 
         public function tambahGedung($data)
         {
@@ -24,5 +32,10 @@ class gedungModel extends CI_Model {
                 $this->db->update('gedung', $data);
 
         }
+        public function hapusGedung($data)
+        {
+                $this->db->where('idGedung', $data);
+                $this->db->delete('gedung');
 
+        }
 }
