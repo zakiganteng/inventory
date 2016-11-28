@@ -164,13 +164,16 @@
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama Barang </label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" class="form-control" disabled="disabled" placeholder="Nama Barang">
+                          <input type="text" class="form-control" disabled="disabled" placeholder="Nama Barang" value='<?php echo $namaBarang ;?>'>
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Pilih Ruangan</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
                           <select class="form-control">
+                            <option selected="selected">
+                              <?php echo $ruangan ;?>
+                            </option>
                             <option>Pilih Ruangan</option>
                             <option>A310</option>
                             <option>B210</option>
