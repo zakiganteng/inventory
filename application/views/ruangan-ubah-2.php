@@ -169,11 +169,11 @@
                             <option selected="selected">
                               <?php echo $fakultas ;?>
                             </option>
-                            <option>Pilih Fakultas</option>
-                            <option>FIF</option>
-                            <option>FTE</option>
-                            <option>FRI</option>
-                            <option>FIT</option>
+                            <?php foreach ($datana as $key => $value): ?>
+                            <?php if ((('0') != ($value['role'])) and (($fakultas) != ($value['namaUser']))): ?>
+                            <option><?php echo $value['namaUser'] ?></option>
+                            <?php endif; ?>  
+                            <?php endforeach ?>
                           </select>
                         </div>
                       </div>
@@ -184,12 +184,12 @@
                         <div class="col-md-9 col-sm-9 col-xs-12">
                           <div class="radio">
                             <label>
-                              <input type="radio" checked="" value="option1" id="optionsRadios1" name="optionsRadios"> Baik
+                              <input type="radio" checked="" value="Baik" id="optionsRadios1" name="optionsRadios"> Baik
                             </label>
                           </div>
                           <div class="radio">
                             <label>
-                              <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> Rusak
+                              <input type="radio" value="Rusak" id="optionsRadios2" name="optionsRadios"> Rusak
                             </label>
                           </div>
                         </div>

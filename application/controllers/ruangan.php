@@ -6,6 +6,8 @@ class Ruangan extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('ruanganModel');
+		$this->load->model('gedungModel');
+		$this->load->model('userModel');
 	}
 	public function index()
 	{
@@ -27,6 +29,8 @@ class Ruangan extends CI_Controller {
 	}
 	public function edit2($data_)
 	{
+		$data['datane'] = $this->gedungModel->selectGedung();
+		$data['datana'] = $this->userModel->selectUser();
 		$res = $this->ruanganModel->getWhere($data_);
 		$data['ruangan'] = $res[0]['namaRuangan'];
 		$data['fakultas'] = $res[0]['namaUser'];
@@ -38,8 +42,10 @@ class Ruangan extends CI_Controller {
 		$this->load->view('ruangan-hapus',$data);
 	}
 	public function buat()
-	{
-		$this->load->view('ruangan-tambah');
+	{	
+		$data['datane'] = $this->gedungModel->selectGedung();
+		$data['datana'] = $this->userModel->selectUser();
+		$this->load->view('ruangan-tambah',$data);
 	}
 	public function doHapus($data_)
 	{

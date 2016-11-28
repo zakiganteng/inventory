@@ -166,11 +166,9 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Pilih Gedung</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
                           <select class="form-control" name="namaGedung">
-                            <option>Pilih Gedung</option>
-                            <option>A</option>
-                            <option>B</option>
-                            <option>C</option>
-                            <option>D</option>
+                            <?php foreach ($datane as $key => $value): ?>
+                            <option><?php echo $value['namaGedung'] ?></option>  
+                            <?php endforeach ?>
                           </select>
                         </div>
                       </div>
@@ -179,11 +177,11 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Pilih Fakultas</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
                           <select class="form-control" name="namaFakultas">
-                            <option>Pilih Fakultas</option>
-                            <option>FIF</option>
-                            <option>FTE</option>
-                            <option>FRI</option>
-                            <option>FIT</option>
+                            <?php foreach ($datana as $key => $value): ?>
+                            <?php if (('0') != ($value['role'])): ?>
+                            <option><?php echo $value['namaUser'] ?></option>
+                            <?php endif; ?>  
+                            <?php endforeach ?>
                           </select>
                         </div>
                       </div>
