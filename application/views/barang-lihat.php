@@ -179,21 +179,13 @@
                         </tr>
                       </thead>
                       <tbody>
+                      <?php foreach ($datane as $value): ?>
                         <tr>
-                          <td>1</td>
-                          <td>meja</td>
-                          <td>a310</td>
+                          <td><?php echo $value['idBarang']; ?></td>
+                          <td><?php echo $value['namaBarang']; ?></td>
+                          <td><?php echo $value['idRuangan']; ?></td>
                         </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>meja</td>
-                          <td>a310</td>
-                        </tr>
-                        <tr>
-                          <td>3</td>
-                          <td>meja</td>
-                          <td>a310</td>
-                        </tr>
+                      <?php endforeach ?>
                       </tbody>
                     </table>
 
