@@ -3,9 +3,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Gedung extends CI_Controller {
 
-	public function index()
+	public function __construct()
 	{
-		$this->load->view('gedung-lihat');
+		parent::__construct();
+		$this->load->model('barangModel');
+	}
+
+	public function index()
+	{	
+
+		$data['data'] = $this->barangModel->selectBarang();
+		$this->load->view('gedung-lihat',$data);
 	}
 	public function edit()
 	{

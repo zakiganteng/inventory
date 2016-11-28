@@ -7,22 +7,22 @@ class barangModel extends CI_Model {
                 parent::__construct();
         }
 
-        public function get_last_ten_entries()
+        public function selectBarang()
         {
                 $query = $this->db->get('barang');
-                return $query->result();
+                return $query->result_array();
         }
 
-        public function insert_entry($data)
+        public function tambahBarang($data)
         {
-                $query = $this->db->insert('barang', $data);
-                return $query->result();
+                $this->db->insert('barang',$data);
         }
 
-        public function update_entry($data)
+        public function editBarang($data)
         {
                 $this->db->where('idBarang', $data['idBarang']);
                 $this->db->update('barang', $data);
+
         }
 
 }
