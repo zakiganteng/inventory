@@ -36,9 +36,18 @@ class Ruangan extends CI_Controller {
 		$data['datane'] = $this->gedungModel->selectGedung();
 		$data['datana'] = $this->userModel->selectUser();
 		$res = $this->ruanganModel->getWhere($data_);
+		$data['idRuangan'] = $res[0]['idRuangan'];
 		$data['ruangan'] = $res[0]['namaRuangan'];
 		$data['fakultas'] = $res[0]['namaUser'];
 		$this->load->view('ruangan-ubah-2',$data);
+	}
+
+	public function doEdit(){
+		$data['idRuangan'] = $this->input->post('idRuangan');
+		$data['namaUser'] = $this->input->post('namaUser');
+		$data['statusRuangan'] = $this->input->post('optionsRadios');
+		$this->ruanganModel->editRuangan($data);
+		redirect(base_url().'ruangan/edit/');
 	}
 	public function hapus()
 	{

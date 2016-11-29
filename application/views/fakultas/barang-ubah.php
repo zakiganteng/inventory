@@ -176,7 +176,7 @@
                           <td><?php echo $value['idBarang']; ?></td>
                           <td><?php echo $value['namaBarang']; ?></td>
                           <td><?php echo $value['namaRuangan']; ?></td>
-                          <td><a href="<?php echo base_url().'Barang/edit2/'.$value['idBarang'];?>">Edit</a></td>
+                          <td><a href="<?php echo base_url().'Barang/edit2Fakultas/'.$value['idBarang'];?>">Edit</a></td>
                         </tr>
                       <?php endforeach ?>
                       </tbody>

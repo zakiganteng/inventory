@@ -31,8 +31,16 @@ class Gedung extends CI_Controller {
 	{
 		$data['namaUser'] = $this->session->userdata('namaUser');
 		$res = $this->gedungModel->getWhere($data_);
+		$data['idGedung'] = $res[0]['idGedung'];
 		$data['namaGedung'] = $res[0]['namaGedung'];
 		$this->load->view('gedung-ubah-2',$data);
+	}
+
+	public function doEdit(){
+		$data['idGedung'] = $this->input->post('idGedung');
+		$data['statusGedung'] = $this->input->post('optionsRadios');
+		$this->gedungModel->editGedung($data);
+		redirect(base_url().'gedung/edit/');
 	}
 	public function hapus()
 	{

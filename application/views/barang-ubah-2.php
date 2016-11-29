@@ -155,13 +155,7 @@
                     <br />
                     <form class="form-horizontal form-label-left" method="post" action = "<?php echo base_url();?>barang/doEdit">
 
-                      <!--<div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama Barang</label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" class="form-control" placeholder="Nama Barang">
-                        </div>
-                      </div>
-                      -->
+                      
                       <input type="hidden" name="idBarang" value= '<?php echo $idBarang ;?>'/>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama Barang </label>
