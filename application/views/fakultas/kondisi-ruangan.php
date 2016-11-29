@@ -60,37 +60,30 @@
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-square"></i> Barang <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?php echo base_url();?>Barang">Lihat Barang</a></li>                      
-                      <li><a href="<?php echo base_url();?>Barang/edit">Ubah Barang</a></li>
-                      <li><a href="<?php echo base_url();?>Barang/buat">Tambah Barang</a></li>
-                      <li><a href="<?php echo base_url();?>Barang/hapus">Hapus Barang</a></li>
+                      <li><a href="<?php echo base_url();?>Barang/fakultas">Lihat Barang</a></li>                      
+                      <li><a href="<?php echo base_url();?>Barang/editFakultas">Ubah Barang</a></li>
+                      <li><a href="<?php echo base_url();?>Barang/hapusFakultas">Hapus Barang</a></li>
                     </ul>
                   </li>                  
                   <li><a><i class="fa fa-bookmark"></i> Ruangan <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?php echo base_url();?>Ruangan">Lihat Ruangan</a></li>
-                      <li><a href="<?php echo base_url();?>Ruangan/edit">Ubah Ruangan</a></li>
-                      <li><a href="<?php echo base_url();?>Ruangan/buat">Tambah Ruangan</a></li>
-                      <li><a href="<?php echo base_url();?>Ruangan/hapus">Hapus Ruangan</a></li>
+                      <li><a href="<?php echo base_url();?>Ruangan/fakultas">Lihat Ruangan</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-building"></i> Gedung <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?php echo base_url();?>Gedung">Lihat Gedung</a></li>
-                      <li><a href="<?php echo base_url();?>Gedung/edit">Ubah Gedung</a></li>
-                      <li><a href="<?php echo base_url();?>Gedung/buat">Tambah Gedung</a></li>
-                      <li><a href="<?php echo base_url();?>Gedung/hapus">Hapus Gedung</a></li>
+                      <li><a href="<?php echo base_url();?>Gedung/fakultas">Lihat Gedung</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-edit"></i> Permintaan <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?php echo base_url();?>Permintaan">Konfirmasi Permintaan</a></li>
+                      <li><a href="<?php echo base_url();?>Permintaan/fakultas">Ajukan Permintaan</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-archive"></i> Status <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?php echo base_url();?>Kondisi">Kondisi Barang</a></li>
-                      <li><a href="<?php echo base_url();?>Kondisi/ruangan">Kondisi Ruangan</a></li>
+                      <li><a href="<?php echo base_url();?>Kondisi/barangFakultas">Kondisi Barang</a></li>
+                      <li><a href="<?php echo base_url();?>Kondisi/ruanganFakultas">Kondisi Ruangan</a></li>
                     </ul>
                   </li>
                   <!-- <li><a><i class="fa fa-table"></i> Pelaporan <span class="fa fa-chevron-down"></span></a>
@@ -160,19 +153,20 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Lihat Gedung</small></h2>
+                    <h2>Kondisi Ruangan</small></h2>
                     
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
                     <p class="text-muted font-13 m-b-30">
                     </p>
-                    <table id="datatable-checkbox" class="table table-striped table-bordered bulk_action">
+                     <table id="datatable-checkbox" class="table table-striped table-bordered bulk_action">
                       <thead>
                         <tr>
-                          <th>Id Gedung</th>
-                          <th>Nama Gedung</th>
-                          <th>Jumlah Ruangan</th>
+                          <th>Id Barang</th>
+                          <th>Nama Barang</th>
+                          <th>Fakultas</th>
+                          <th>Kondisi Ruangan</th>
                         </tr>
                       </thead>
 
@@ -180,9 +174,10 @@
                       <tbody>
                       <?php foreach ($datane as $value): ?>
                         <tr>
-                          <td><?php echo $value['idGedung']; ?></td>
-                          <td><?php echo $value['namaGedung']; ?></td>
-                          <td><?php echo $value['idGedung']; ?></td>
+                          <td><?php echo $value['idRuangan']; ?></td>
+                          <td><?php echo $value['namaRuangan']; ?></td>
+                          <td><?php echo $value['namaUser']; ?></td>
+                          <td><?php echo $value['statusRuangan']; ?></td>
                         </tr>
                       <?php endforeach ?>
                       </tbody>

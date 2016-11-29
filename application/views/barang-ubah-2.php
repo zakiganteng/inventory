@@ -53,7 +53,7 @@
 
             <br />
 
-           <!-- sidebar menu -->
+            <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
                 <h3>Inventory</h3>
@@ -109,6 +109,7 @@
             </div>
             <!-- /sidebar menu -->
 
+
             
           </div>
         </div>
@@ -128,7 +129,7 @@
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
-                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                    <li><a href="<?php echo site_url('barang/logout'); ?>"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                   </ul>
                 </li>
 
@@ -139,7 +140,7 @@
         </div>
         <!-- /top navigation -->
 
-       <!-- page content -->
+        <!-- page content -->
         <div class="right_col" role="main">
           <div class="">
             
@@ -155,12 +156,12 @@
                     <form class="form-horizontal form-label-left">
 
                       <!--<div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama Barang</label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" class="form-control" placeholder="Nama Barang">
-                        </div>
-                      </div>
-                      -->
+-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama Barang</label>
+-                        <div class="col-md-9 col-sm-9 col-xs-12">
+-                          <input type="text" class="form-control" placeholder="Nama Barang">
+-                        </div>
+-                      </div>
+-                      -->
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama Barang </label>
                         <div class="col-md-9 col-sm-9 col-xs-12">

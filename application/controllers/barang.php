@@ -72,7 +72,27 @@ class Barang extends CI_Controller {
 		session_destroy();
 		redirect('Welcome');
 	}
-
+	public function fakultas()
+	{
+		$data['namaUser'] = $this->session->userdata('namaUser');
+		$data['datane'] = $this->barangModel->selectBarang();
+		$this->load->view('fakultas/barang-lihat',$data);
+	}
+	public function editFakultas()
+	{	
+		$data['namaUser'] = $this->session->userdata('namaUser');
+		$data['datane'] = $this->barangModel->selectBarang();
+		$this->load->view('fakultas/barang-ubah',$data);
+	}
+	public function edit2Fakultas($data_)
+	{	
+		$data['namaUser'] = $this->session->userdata('namaUser');
+		$data['datane'] = $this->ruanganModel->selectRuangan();
+		$res = $this->barangModel->getWhere($data_);
+		$data['namaBarang'] = $res[0]['namaBarang'];
+		$data['ruangan'] = $res[0]['namaRuangan'];
+		$this->load->view('fakultas/barang-ubah-2',$data);
+	}
 }
 
 /* End of file barang.php */

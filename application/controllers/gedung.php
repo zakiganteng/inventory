@@ -7,6 +7,7 @@ class Gedung extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('gedungModel');
+		$this->load->model('ruanganModel');
 	}
 	public function index()
 	{
@@ -41,15 +42,20 @@ class Gedung extends CI_Controller {
 	}
 	public function buat()
 	{
-		$data['nnamaUser'] = $this->session->userdata('namaUser');
-		$this->load->view('gedung-tambah');
+		$data['namaUser'] = $this->session->userdata('namaUser');
+		$this->load->view('gedung-tambah',$data);
 	}
 	public function doHapus($data_)
 	{
 		$this->gedungModel->hapusGedung($data_);
 		redirect(base_url().'gedung/hapus/');
 	}
-
+	public function fakultas()
+	{
+		$data['namaUser'] = $this->session->userdata('namaUser');
+		$data['datane'] = $this->gedungModel->selectGedung();
+		$this->load->view('fakultas/gedung-lihat',$data);
+	}
 }
 
 /* End of file gedung.php */

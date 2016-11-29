@@ -44,7 +44,7 @@ class Welcome extends CI_Controller {
 				redirect('barang');
 			}
 			elseif ($this->session->userdata('role')=='1') {
-				redirect('member/c_member');
+				redirect('barang/fakultas');
 			}		
 		}
 		else {

@@ -23,6 +23,7 @@ class Ruangan extends CI_Controller {
 		$this->ruanganModel->tambahRuangan($data);
 		redirect(base_url().'ruangan/buat/');
 	}
+
 	public function edit()
 	{
 		$data['namaUser'] = $this->session->userdata('namaUser');
@@ -56,6 +57,12 @@ class Ruangan extends CI_Controller {
 	{
 		$this->ruanganModel->hapusRuangan($data_);
 		redirect(base_url().'ruangan/hapus/');
+	}
+	public function fakultas()
+	{	
+		$data['namaUser'] = $this->session->userdata('namaUser');
+		$data['datane'] = $this->ruanganModel->selectRuangan();
+		$this->load->view('fakultas/ruangan-lihat',$data);
 	}
 
 }
