@@ -60,37 +60,30 @@
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-square"></i> Barang <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?php echo base_url();?>Barang">Lihat Barang</a></li>                      
-                      <li><a href="<?php echo base_url();?>Barang/edit">Ubah Barang</a></li>
-                      <li><a href="<?php echo base_url();?>Barang/buat">Tambah Barang</a></li>
-                      <li><a href="<?php echo base_url();?>Barang/hapus">Hapus Barang</a></li>
+                      <li><a href="<?php echo base_url();?>Barang/fakultas">Lihat Barang</a></li>                      
+                      <li><a href="<?php echo base_url();?>Barang/editFakultas">Ubah Barang</a></li>
+                      <li><a href="<?php echo base_url();?>Barang/hapusFakultas">Hapus Barang</a></li>
                     </ul>
                   </li>                  
                   <li><a><i class="fa fa-bookmark"></i> Ruangan <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?php echo base_url();?>Ruangan">Lihat Ruangan</a></li>
-                      <li><a href="<?php echo base_url();?>Ruangan/edit">Ubah Ruangan</a></li>
-                      <li><a href="<?php echo base_url();?>Ruangan/buat">Tambah Ruangan</a></li>
-                      <li><a href="<?php echo base_url();?>Ruangan/hapus">Hapus Ruangan</a></li>
+                      <li><a href="<?php echo base_url();?>Ruangan/fakultas">Lihat Ruangan</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-building"></i> Gedung <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?php echo base_url();?>Gedung">Lihat Gedung</a></li>
-                      <li><a href="<?php echo base_url();?>Gedung/edit">Ubah Gedung</a></li>
-                      <li><a href="<?php echo base_url();?>Gedung/buat">Tambah Gedung</a></li>
-                      <li><a href="<?php echo base_url();?>Gedung/hapus">Hapus Gedung</a></li>
+                      <li><a href="<?php echo base_url();?>Gedung/fakultas">Lihat Gedung</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-edit"></i> Permintaan <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?php echo base_url();?>Permintaan">Konfirmasi Permintaan</a></li>
+                      <li><a href="<?php echo base_url();?>Permintaan/fakultas">Ajukan Permintaan</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-archive"></i> Status <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?php echo base_url();?>Kondisi">Kondisi Barang</a></li>
-                      <li><a href="<?php echo base_url();?>Kondisi/ruangan">Kondisi Ruangan</a></li>
+                      <li><a href="<?php echo base_url();?>Kondisi/barangFakultas">Kondisi Barang</a></li>
+                      <li><a href="<?php echo base_url();?>Kondisi/ruanganFakultas">Kondisi Ruangan</a></li>
                     </ul>
                   </li>
                   <!-- <li><a><i class="fa fa-table"></i> Pelaporan <span class="fa fa-chevron-down"></span></a>
@@ -143,57 +136,80 @@
         <!-- page content -->
         <div class="right_col" role="main">
           <div class="">
-            <div class="page-title">
-              <div class="title_left">
-                <h3></h3>
-              </div>
-
-              <div class="title_right">
-                
-              </div>
-            </div>
-
-            <div class="clearfix"></div>
-
-
+            
 
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Lihat Gedung</small></h2>
-                    
+                    <h2>Tambah Barang</h2>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                    <p class="text-muted font-13 m-b-30">
-                    </p>
-                    <table id="datatable-checkbox" class="table table-striped table-bordered bulk_action">
-                      <thead>
-                        <tr>
-                          <th>Id Gedung</th>
-                          <th>Nama Gedung</th>
-                          <th>Jumlah Ruangan</th>
-                        </tr>
-                      </thead>
+                    <br />
+                    <form class="form-horizontal form-label-left" method="post" action = "<?php echo base_url();?>barang/doInsert">
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama Barang</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="text" class="form-control" placeholder="Nama Barang" name='namaBarang'>
+                        </div>
+                      </div>
+                      
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Pilih Ruangan</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <select class="form-control" placeholder="Pilih Ruangan" name='ruangan'>
+                            <?php foreach ($datane as $key => $value): ?>
+                            <option><?php echo $value['namaRuangan'] ?></option>  
+                            <?php endforeach ?>
+                            
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Jumlah Barang</label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <input type="number" class="form-control" placeholder="Jumlah Barang" name='jumlahBarang'>
+                        </div>
+                      </div>
+
+                      
+                      <div class="form-group">
+                        <label class="col-md-3 col-sm-3 col-xs-12 control-label">Status
+                        </label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                          <div class="radio">
+                            <label>
+                              <input type="radio" checked="" value="Baik" id="optionsRadios1" name="optionsRadios"> Baik
+                            </label>
+                          </div>
+                          <div class="radio">
+                            <label>
+                              <input type="radio" value="Rusak" id="optionsRadios2" name="optionsRadios"> Rusak
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+
+                      
 
 
-                      <tbody>
-                      <?php foreach ($datane as $value): ?>
-                        <tr>
-                          <td><?php echo $value['idGedung']; ?></td>
-                          <td><?php echo $value['namaGedung']; ?></td>
-                          <td><?php echo $value['idGedung']; ?></td>
-                        </tr>
-                      <?php endforeach ?>
-                      </tbody>
-                    </table>
+                      <div class="ln_solid"></div>
+                      <div class="form-group">
+                        <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
+                          <button type="submit" class="btn btn-primary">Cancel</button>
+                          <input type="submit" class="btn btn-success" name="btnSubmit" value="tambah">
+                        </div>
+                      </div>
+
+                    </form>
                   </div>
                 </div>
               </div>
 
-             
 
-                 
+              
             </div>
           </div>
         </div>

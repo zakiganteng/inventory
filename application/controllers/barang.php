@@ -8,9 +8,14 @@ class Barang extends CI_Controller {
 		parent::__construct();
 		$this->load->model('barangModel');
 		$this->load->model('ruanganModel');
+		if ($this->session->userdata('namaUser')=="") {
+			redirect('Welcome');
+		}
+		$this->load->helper('text');
 	}
 	public function index()
 	{
+		$data['namaUser'] = $this->session->userdata('namaUser');
 		$data['datane'] = $this->barangModel->selectBarang();
 		$this->load->view('barang-lihat',$data);
 	}
@@ -28,12 +33,14 @@ class Barang extends CI_Controller {
 		redirect(base_url().'barang/buat/');
 	}
 	public function edit()
-	{
+	{	
+		$data['namaUser'] = $this->session->userdata('namaUser');
 		$data['datane'] = $this->barangModel->selectBarang();
 		$this->load->view('barang-ubah',$data);
 	}
 	public function edit2($data_)
 	{	
+		$data['namaUser'] = $this->session->userdata('namaUser');
 		$data['datane'] = $this->ruanganModel->selectRuangan();
 		$res = $this->barangModel->getWhere($data_);
 		$data['idBarang'] = $res[0]['idBarang'];
@@ -50,21 +57,51 @@ class Barang extends CI_Controller {
 		redirect(base_url().'barang/edit/');
 	}
 	public function hapus()
-	{
+	{	
+		$data['namaUser'] = $this->session->userdata('namaUser');
 		$data['datane'] = $this->barangModel->selectBarang();
 		$this->load->view('barang-hapus',$data);
 	}
 	public function buat()
 	{
+		$data['namaUser'] = $this->session->userdata('namaUser');
 		$data['datane'] = $this->ruanganModel->selectRuangan();
 		$this->load->view('barang-tambah',$data);
 	}
 	public function doHapus($data_)
-	{
+	{	
+		
 		$this->barangModel->hapusBarang($data_);
 		redirect(base_url().'barang/hapus/');
 	}
-
+	public function logout() {
+		$this->session->unset_userdata('namaUser');
+		$this->load->model('barangModel');
+		$this->session->unset_userdata('role');
+		session_destroy();
+		redirect('Welcome');
+	}
+	public function fakultas()
+	{
+		$data['namaUser'] = $this->session->userdata('namaUser');
+		$data['datane'] = $this->barangModel->selectBarang();
+		$this->load->view('fakultas/barang-lihat',$data);
+	}
+	public function editFakultas()
+	{	
+		$data['namaUser'] = $this->session->userdata('namaUser');
+		$data['datane'] = $this->barangModel->selectBarang();
+		$this->load->view('fakultas/barang-ubah',$data);
+	}
+	public function edit2Fakultas($data_)
+	{	
+		$data['namaUser'] = $this->session->userdata('namaUser');
+		$data['datane'] = $this->ruanganModel->selectRuangan();
+		$res = $this->barangModel->getWhere($data_);
+		$data['namaBarang'] = $res[0]['namaBarang'];
+		$data['ruangan'] = $res[0]['namaRuangan'];
+		$this->load->view('fakultas/barang-ubah-2',$data);
+	}
 }
 
 /* End of file barang.php */

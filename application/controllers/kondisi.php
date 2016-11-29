@@ -11,14 +11,29 @@ class Kondisi extends CI_Controller {
 	}
 	public function index()
 	{
+		$data['namaUser'] = $this->session->userdata('namaUser');
 		$data['datane'] = $this->barangModel->selectBarang();
 		$this->load->view('kondisi-barang',$data);
 	}
 	public function ruangan()
 	{
+		$data['namaUser'] = $this->session->userdata('namaUser');
 		$data['datane'] = $this->ruanganModel->selectRuangan();
 		$this->load->view('kondisi-ruangan',$data);
 	}
+	public function barangFakultas()
+	{
+		$data['namaUser'] = $this->session->userdata('namaUser');
+		$data['datane'] = $this->barangModel->selectBarang();
+		$this->load->view('fakultas/kondisi-barang',$data);
+	}
+	public function ruanganFakultas()
+	{
+		$data['namaUser'] = $this->session->userdata('namaUser');
+		$data['datane'] = $this->ruanganModel->selectRuangan();
+		$this->load->view('fakultas/kondisi-ruangan',$data);
+	}
+
 
 }
 

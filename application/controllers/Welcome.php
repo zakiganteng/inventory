@@ -2,7 +2,10 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
-
+	public function __construct()
+	{
+		parent::__construct();
+	}
 	/**
 	 * Index Page for this controller.
 	 *
@@ -21,5 +24,31 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('login');
+	}
+	public function cek_login() {
+		$data = array('namaUser' => $this->input->post('namaUser', TRUE),
+						'password' => md5($this->input->post('password', TRUE))
+			);
+		$this->load->model('userModel'); // load model_user
+		$hasil = $this->userModel->cek_user($data);
+		//echo $hasil->result ;
+		if ($hasil->num_rows() == 1) {
+			foreach ($hasil->result() as $sess) {
+				$sess_data['logged_in'] = 'Sudah Loggin';
+				$sess_data['idUser'] = $sess->idUser;
+				$sess_data['namaUser'] = $sess->namaUser;
+				$sess_data['role'] = $sess->role;
+				$this->session->set_userdata($sess_data);
+			}
+			if ($this->session->userdata('role')=='0') {
+				redirect('barang');
+			}
+			elseif ($this->session->userdata('role')=='1') {
+				redirect('barang/fakultas');
+			}		
+		}
+		else {
+			echo "<script>alert('Gagal login: Cek namaUser, password!');history.go(-1);</script>";
+		}
 	}
 }
