@@ -6,6 +6,7 @@ class Barang extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		$this->load->model('userModel');
 		$this->load->model('barangModel');
 		$this->load->model('ruanganModel');
 		if ($this->session->userdata('namaUser')=="") {
@@ -54,7 +55,14 @@ class Barang extends CI_Controller {
 		$data['namaRuangan'] = $this->input->post('ruangan');
 		$data['statusBarang'] = $this->input->post('optionsRadios');
 		$this->barangModel->editBarang($data);
-		redirect(base_url().'barang/edit/');
+		$namaUser = $this->session->userdata('namaUser');
+		$user =  $this->userModel->getWhere($namaUser);
+		if (($user[0]['role']) == 0) {
+			redirect(base_url().'barang/edit/');	
+		}else{
+			redirect(base_url().'barang/editFakultas/');
+		}
+		
 	}
 	public function hapus()
 	{	
@@ -98,6 +106,7 @@ class Barang extends CI_Controller {
 		$data['namaUser'] = $this->session->userdata('namaUser');
 		$data['datane'] = $this->ruanganModel->selectRuangan();
 		$res = $this->barangModel->getWhere($data_);
+		$data['idBarang'] = $res[0]['idBarang'];
 		$data['namaBarang'] = $res[0]['namaBarang'];
 		$data['ruangan'] = $res[0]['namaRuangan'];
 		$this->load->view('fakultas/barang-ubah-2',$data);
