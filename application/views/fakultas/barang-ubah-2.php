@@ -146,7 +146,7 @@
                   </div>
                   <div class="x_content">
                     <br />
-                    <form class="form-horizontal form-label-left" method="post" action = "<?php echo base_url();?>barang/doEditFakultas">
+                    <form class="form-horizontal form-label-left" method="post" action = "<?php echo base_url();?>barang/doEdit">
 
                       
                       <input type="hidden" name="idBarang" value= '<?php echo $idBarang ;?>'/>

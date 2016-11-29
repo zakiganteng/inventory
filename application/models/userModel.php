@@ -16,4 +16,13 @@ class userModel extends CI_Model {
         	$query = $this->db->get_where('user', $data);
         	return $query;
         }
+        public function getWhere($data)
+        {       
+                $this->db->select('*');
+                $this->db->where('namaUser',$data);
+                $this->db->from('user');
+                $query = $this->db->get();
+                return $query->result_array();
+        }
+
 }
