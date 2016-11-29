@@ -153,8 +153,10 @@
                   </div>
                   <div class="x_content">
                     <br />
-                    <form class="form-horizontal form-label-left">
+                    <form class="form-horizontal form-label-left" method="post" action = "<?php echo base_url();?>ruangan/doEdit">
 
+                      
+                      <input type="hidden" name="idRuangan" value= '<?php echo $idRuangan ;?>'/>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama Ruangan</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
@@ -165,8 +167,8 @@
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Pilih Fakultas</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                          <select class="form-control">
-                            <option selected="selected">
+                          <select class="form-control" name='namaUser'>
+                            <option selected="selected" >
                               <?php echo $fakultas ;?>
                             </option>
                             <?php foreach ($datana as $key => $value): ?>

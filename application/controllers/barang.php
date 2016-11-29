@@ -102,6 +102,13 @@ class Barang extends CI_Controller {
 		$data['ruangan'] = $res[0]['namaRuangan'];
 		$this->load->view('fakultas/barang-ubah-2',$data);
 	}
+	public function doEditFakultas(){
+		$data['idBarang'] = $this->input->post('idBarang');
+		$data['namaRuangan'] = $this->input->post('ruangan');
+		$data['statusBarang'] = $this->input->post('optionsRadios');
+		$this->barangModel->editBarang($data);
+		redirect(base_url().'barang/editFakultas/');
+	}
 }
 
 /* End of file barang.php */
