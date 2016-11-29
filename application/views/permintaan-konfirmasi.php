@@ -173,6 +173,7 @@
                           <th>Id Barang</th>
                           <th>Nama Barang</th>
                           <th>Ruangan Barang</th>
+                          <th>Fakultas</th>
                           <th>Jumlah Barang</th>
                           <th>Action</th>
                         </tr>
@@ -185,6 +186,7 @@
                           <td><?php echo $value['idPermintaan']; ?></td>
                           <td><?php echo $value['namaBarang']; ?></td>
                           <td><?php echo $value['namaRuangan']; ?></td>
+                          <td><?php echo $value['namaUser']; ?></td>
                           <td><?php echo $value['jumlahBarang']; ?></td>
                           <td><a href="#">Hapus</a></td>
                         </tr>
