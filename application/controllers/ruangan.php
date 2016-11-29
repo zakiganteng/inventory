@@ -23,6 +23,7 @@ class Ruangan extends CI_Controller {
 		$this->ruanganModel->tambahRuangan($data);
 		redirect(base_url().'ruangan/buat/');
 	}
+
 	public function edit()
 	{
 		$data['namaUser'] = $this->session->userdata('namaUser');
