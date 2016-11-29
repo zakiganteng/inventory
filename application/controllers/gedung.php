@@ -7,6 +7,7 @@ class Gedung extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('gedungModel');
+		$this->load->model('ruanganModel');
 	}
 	public function index()
 	{
@@ -41,8 +42,8 @@ class Gedung extends CI_Controller {
 	}
 	public function buat()
 	{
-		$data['nnamaUser'] = $this->session->userdata('namaUser');
-		$this->load->view('gedung-tambah');
+		$data['namaUser'] = $this->session->userdata('namaUser');
+		$this->load->view('gedung-tambah',$data);
 	}
 	public function doHapus($data_)
 	{

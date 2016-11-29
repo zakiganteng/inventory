@@ -10,4 +10,10 @@ class userModel extends CI_Model {
                 $query = $this->db->get('user');
                 return $query->result_array();
         }
+        public function cek_user($data)
+        {
+        	# code...
+        	$query = $this->db->get_where('user', $data);
+        	return $query;
+        }
 }
