@@ -141,12 +141,12 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Tambah Barang</h2>
+                    <h2>Permintaan Barang</h2>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
                     <br />
-                    <form class="form-horizontal form-label-left" method="post" action = "<?php echo base_url();?>barang/doInsert">
+                    <form class="form-horizontal form-label-left" method="post" action = "<?php echo base_url();?>permintaan/doInsert">
 
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama Barang</label>
@@ -175,22 +175,7 @@
                       </div>
 
                       
-                      <div class="form-group">
-                        <label class="col-md-3 col-sm-3 col-xs-12 control-label">Status
-                        </label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <div class="radio">
-                            <label>
-                              <input type="radio" checked="" value="Baik" id="optionsRadios1" name="optionsRadios"> Baik
-                            </label>
-                          </div>
-                          <div class="radio">
-                            <label>
-                              <input type="radio" value="Rusak" id="optionsRadios2" name="optionsRadios"> Rusak
-                            </label>
-                          </div>
-                        </div>
-                      </div>
+                      
 
                       
 

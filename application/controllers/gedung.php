@@ -19,7 +19,7 @@ class Gedung extends CI_Controller {
 		$data['namaGedung'] = $this->input->post('namaGedung');
 		$data['statusGedung'] = $this->input->post('optionsRadios');
 		$this->gedungModel->tambahGedung($data);
-		redirect(base_url().'gedung/buat/');
+		redirect(base_url().'gedung');
 	}
 	public function edit()
 	{

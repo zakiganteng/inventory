@@ -23,6 +23,20 @@ class Permintaan extends CI_Controller {
 		$this->load->view('fakultas/permintaan-ajukan',$data);
 	}
 
+	public function doInsert(){
+		
+		$data['namaBarang'] = $this->input->post('namaBarang');
+		$data['namaRuangan'] = $this->input->post('ruangan');
+		$data['jumlahBarang'] = $this->input->post('jumlahBarang');
+		$namaUser = $this->session->userdata('namaUser');
+		$data['namaUser'] = $namaUser;
+			
+		$this->permintaanModel->tambahPermintaan($data);
+		
+		
+		redirect(base_url().'permintaan/fakultas');
+	}
+
 }
 
 /* End of file permintaan.php */

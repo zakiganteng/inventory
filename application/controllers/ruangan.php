@@ -21,7 +21,7 @@ class Ruangan extends CI_Controller {
 		$data['namaUser'] = $this->input->post('namaFakultas');
 		$data['statusRuangan'] = $this->input->post('optionsRadios');
 		$this->ruanganModel->tambahRuangan($data);
-		redirect(base_url().'ruangan/buat/');
+		redirect(base_url().'ruangan');
 	}
 
 	public function edit()
