@@ -36,9 +36,18 @@ class Barang extends CI_Controller {
 	{	
 		$data['datane'] = $this->ruanganModel->selectRuangan();
 		$res = $this->barangModel->getWhere($data_);
+		$data['idBarang'] = $res[0]['idBarang'];
 		$data['namaBarang'] = $res[0]['namaBarang'];
 		$data['ruangan'] = $res[0]['namaRuangan'];
 		$this->load->view('barang-ubah-2',$data);
+	}
+
+	public function doEdit(){
+		$data['idBarang'] = $this->input->post('idBarang');
+		$data['namaRuangan'] = $this->input->post('ruangan');
+		$data['statusBarang'] = $this->input->post('optionsRadios');
+		$this->barangModel->editBarang($data);
+		redirect(base_url().'barang/edit/');
 	}
 	public function hapus()
 	{
