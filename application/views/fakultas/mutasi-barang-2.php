@@ -60,48 +60,41 @@
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-square"></i> Barang <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?php echo base_url();?>Barang">Lihat Barang</a></li>                      
-                      <li><a href="<?php echo base_url();?>Barang/edit">Ubah Barang</a></li>
-                      <li><a href="<?php echo base_url();?>Barang/buat">Tambah Barang</a></li>
-                      <li><a href="<?php echo base_url();?>Barang/hapus">Hapus Barang</a></li>
+                      <li><a href="<?php echo base_url();?>Barang/fakultas">Lihat Barang</a></li>                      
+                      <li><a href="<?php echo base_url();?>Barang/editFakultas">Ubah Barang</a></li>
+                      <li><a href="<?php echo base_url();?>Barang/hapusFakultas">Hapus Barang</a></li>
                     </ul>
                   </li>                  
                   <li><a><i class="fa fa-bookmark"></i> Ruangan <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?php echo base_url();?>Ruangan">Lihat Ruangan</a></li>
-                      <li><a href="<?php echo base_url();?>Ruangan/edit">Ubah Ruangan</a></li>
-                      <li><a href="<?php echo base_url();?>Ruangan/buat">Tambah Ruangan</a></li>
-                      <li><a href="<?php echo base_url();?>Ruangan/hapus">Hapus Ruangan</a></li>
+                      <li><a href="<?php echo base_url();?>Ruangan/fakultas">Lihat Ruangan</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-building"></i> Gedung <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?php echo base_url();?>Gedung">Lihat Gedung</a></li>
-                      <li><a href="<?php echo base_url();?>Gedung/edit">Ubah Gedung</a></li>
-                      <li><a href="<?php echo base_url();?>Gedung/buat">Tambah Gedung</a></li>
-                      <li><a href="<?php echo base_url();?>Gedung/hapus">Hapus Gedung</a></li>
+                      <li><a href="<?php echo base_url();?>Gedung/fakultas">Lihat Gedung</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-edit"></i> Permintaan <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?php echo base_url();?>Permintaan">Konfirmasi Permintaan</a></li>
+                      <li><a href="<?php echo base_url();?>Permintaan/fakultas">Ajukan Permintaan</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-archive"></i> Kondisi <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?php echo base_url();?>Kondisi">Kondisi Barang</a></li>
-                      <li><a href="<?php echo base_url();?>Kondisi/ruangan">Kondisi Ruangan</a></li>
+                      <li><a href="<?php echo base_url();?>Kondisi/barangFakultas">Kondisi Barang</a></li>
+                      <li><a href="<?php echo base_url();?>Kondisi/ruanganFakultas">Kondisi Ruangan</a></li>
                     </ul>
                   </li>
+                  
                   <li><a><i class="fa fa-table"></i> Pelaporan <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?php echo base_url();?>Pelaporan">Pelaporan</a></li>
+                      <li><a href="<?php echo base_url();?>Pelaporan/fakultas">Pelaporan</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-truck"></i> Mutasi <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?php echo base_url();?>Mutasi">Mutasi Barang</a></li>
-                      <li><a href="<?php echo base_url();?>Mutasi/ruangan">Mutasi Ruangan</a></li>
+                      <li><a href="<?php echo base_url();?>Mutasi/fakultas">Mutasi Barang</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -109,8 +102,6 @@
 
             </div>
             <!-- /sidebar menu -->
-
-
             
           </div>
         </div>
@@ -149,37 +140,39 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Ubah Ruangan</h2>
+                    <h2>Mutasi Barang</h2>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
                     <br />
-                    <form class="form-horizontal form-label-left" method="post" action = "<?php echo base_url();?>ruangan/doEdit">
+                    <form class="form-horizontal form-label-left" method="post" action = "<?php echo base_url();?>mutasi/doEditBarang">
 
                       
-                      <input type="hidden" name="idRuangan" value= '<?php echo $idRuangan ;?>'/>
+                      <input type="hidden" name="idBarang" value= '<?php echo $idBarang ;?>'/>
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama Ruangan</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama Barang </label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" class="form-control" disabled="disabled" value='<?php echo $ruangan ;?>'>
+                          <input type="text" class="form-control" disabled="disabled"  value='<?php echo $namaBarang ;?>'>
                         </div>
                       </div>
-
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Pilih Fakultas</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Pilih Ruangan</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                          <select class="form-control" name='namaUser'>
-                            <option selected="selected" >
-                              <?php echo $fakultas ;?>
+                          <select class="form-control" name='ruangan'>
+                            <option selected="selected">
+                              <?php echo $ruangan ;?>
                             </option>
-                            <?php foreach ($datana as $key => $value): ?>
-                            <?php if ((('0') != ($value['role'])) and (($fakultas) != ($value['namaUser']))): ?>
-                            <option><?php echo $value['namaUser'] ?></option>
+                            <?php foreach ($datane as $key => $value): ?>
+                            <?php if (($ruangan) != ($value['namaRuangan'])): ?>
+                            <option><?php echo $value['namaRuangan'] ?></option>
                             <?php endif; ?>  
                             <?php endforeach ?>
                           </select>
                         </div>
                       </div>
+
+                      
+
                       
                       <div class="form-group">
                         <label class="col-md-3 col-sm-3 col-xs-12 control-label">Kondisi

@@ -70,7 +70,8 @@ class Ruangan extends CI_Controller {
 	public function fakultas()
 	{	
 		$data['namaUser'] = $this->session->userdata('namaUser');
-		$data['datane'] = $this->ruanganModel->selectRuangan();
+		$res = $this->ruanganModel->getWhereFakultas($data['namaUser']);
+		$data['datane'] = $res;
 		$this->load->view('fakultas/ruangan-lihat',$data);
 	}
 

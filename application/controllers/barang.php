@@ -111,6 +111,19 @@ class Barang extends CI_Controller {
 		$data['ruangan'] = $res[0]['namaRuangan'];
 		$this->load->view('fakultas/barang-ubah-2',$data);
 	}
+
+	public function hapusFakultas()
+	{	
+		$data['namaUser'] = $this->session->userdata('namaUser');
+		$data['datane'] = $this->barangModel->selectBarang();
+		$this->load->view('fakultas/barang-hapus',$data);
+	}
+	public function doHapusFakultas($data_)
+	{	
+		
+		$this->barangModel->hapusBarang($data_);
+		redirect(base_url().'barang/hapusFakultas/');
+	}
 }
 
 /* End of file barang.php */

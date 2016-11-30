@@ -80,28 +80,28 @@
                       <li><a href="<?php echo base_url();?>Permintaan/fakultas">Ajukan Permintaan</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-archive"></i> Status <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-archive"></i> Kondisi <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="<?php echo base_url();?>Kondisi/barangFakultas">Kondisi Barang</a></li>
                       <li><a href="<?php echo base_url();?>Kondisi/ruanganFakultas">Kondisi Ruangan</a></li>
                     </ul>
                   </li>
-                  <!-- <li><a><i class="fa fa-table"></i> Pelaporan <span class="fa fa-chevron-down"></span></a>
+                  
+                  <li><a><i class="fa fa-table"></i> Pelaporan <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="pelaporan.html">Pelaporan</a></li>
+                      <li><a href="<?php echo base_url();?>Pelaporan/fakultas">Pelaporan</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-truck"></i> Mutasi <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="mutasi.html">Mutasi</a></li>
+                      <li><a href="<?php echo base_url();?>Mutasi/fakultas">Mutasi Barang</a></li>
                     </ul>
-                  </li>-->
+                  </li>
                 </ul>
               </div>
 
             </div>
             <!-- /sidebar menu -->
-
             <!-- /menu footer buttons -->
             <!-- /menu footer buttons -->
           </div>

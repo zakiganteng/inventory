@@ -149,37 +149,39 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Ubah Ruangan</h2>
+                    <h2>Mutasi Barang</h2>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
                     <br />
-                    <form class="form-horizontal form-label-left" method="post" action = "<?php echo base_url();?>ruangan/doEdit">
+                    <form class="form-horizontal form-label-left" method="post" action = "<?php echo base_url();?>mutasi/doEditBarang">
 
                       
-                      <input type="hidden" name="idRuangan" value= '<?php echo $idRuangan ;?>'/>
+                      <input type="hidden" name="idBarang" value= '<?php echo $idBarang ;?>'/>
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama Ruangan</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama Barang </label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" class="form-control" disabled="disabled" value='<?php echo $ruangan ;?>'>
+                          <input type="text" class="form-control" disabled="disabled"  value='<?php echo $namaBarang ;?>'>
                         </div>
                       </div>
-
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Pilih Fakultas</label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Pilih Ruangan</label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                          <select class="form-control" name='namaUser'>
-                            <option selected="selected" >
-                              <?php echo $fakultas ;?>
+                          <select class="form-control" name='ruangan'>
+                            <option selected="selected">
+                              <?php echo $ruangan ;?>
                             </option>
-                            <?php foreach ($datana as $key => $value): ?>
-                            <?php if ((('0') != ($value['role'])) and (($fakultas) != ($value['namaUser']))): ?>
-                            <option><?php echo $value['namaUser'] ?></option>
+                            <?php foreach ($datane as $key => $value): ?>
+                            <?php if (($ruangan) != ($value['namaRuangan'])): ?>
+                            <option><?php echo $value['namaRuangan'] ?></option>
                             <?php endif; ?>  
                             <?php endforeach ?>
                           </select>
                         </div>
                       </div>
+
+                      
+
                       
                       <div class="form-group">
                         <label class="col-md-3 col-sm-3 col-xs-12 control-label">Kondisi

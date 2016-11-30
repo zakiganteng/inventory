@@ -30,7 +30,8 @@ class Kondisi extends CI_Controller {
 	public function ruanganFakultas()
 	{
 		$data['namaUser'] = $this->session->userdata('namaUser');
-		$data['datane'] = $this->ruanganModel->selectRuangan();
+		$res = $this->ruanganModel->getWhereFakultas($data['namaUser']);
+		$data['datane'] = $res;
 		$this->load->view('fakultas/kondisi-ruangan',$data);
 	}
 

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+s<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -53,7 +53,7 @@
 
             <br />
 
-            <!-- sidebar menu -->
+           <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
                 <h3>Inventory</h3>
@@ -80,22 +80,23 @@
                       <li><a href="<?php echo base_url();?>Permintaan/fakultas">Ajukan Permintaan</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-archive"></i> Status <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-archive"></i> Kondisi <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="<?php echo base_url();?>Kondisi/barangFakultas">Kondisi Barang</a></li>
                       <li><a href="<?php echo base_url();?>Kondisi/ruanganFakultas">Kondisi Ruangan</a></li>
                     </ul>
                   </li>
-                  <!-- <li><a><i class="fa fa-table"></i> Pelaporan <span class="fa fa-chevron-down"></span></a>
+                  
+                  <li><a><i class="fa fa-table"></i> Pelaporan <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="pelaporan.html">Pelaporan</a></li>
+                      <li><a href="<?php echo base_url();?>Pelaporan/fakultas">Pelaporan</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-truck"></i> Mutasi <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="mutasi.html">Mutasi</a></li>
+                      <li><a href="<?php echo base_url();?>Mutasi/fakultas">Mutasi Barang</a></li>
                     </ul>
-                  </li>-->
+                  </li>
                 </ul>
               </div>
 
@@ -177,7 +178,7 @@
                           <td><?php echo $value['idBarang']; ?></td>
                           <td><?php echo $value['namaBarang']; ?></td>
                           <td><?php echo $value['namaRuangan']; ?></td>
-                          <td><a href="<?php echo base_url().'Barang/doHapus/'.$value['idBarang'];?>">Hapus</a></td>
+                          <td><a href="<?php echo base_url().'Barang/doHapusFakultas/'.$value['idBarang'];?>">Hapus</a></td>
                         </tr>
                       <?php endforeach ?>
                       </tbody>

@@ -87,22 +87,23 @@
                       <li><a href="<?php echo base_url();?>Permintaan">Konfirmasi Permintaan</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-archive"></i> Status <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-archive"></i> Kondisi <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="<?php echo base_url();?>Kondisi">Kondisi Barang</a></li>
                       <li><a href="<?php echo base_url();?>Kondisi/ruangan">Kondisi Ruangan</a></li>
                     </ul>
                   </li>
-                  <!-- <li><a><i class="fa fa-table"></i> Pelaporan <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-table"></i> Pelaporan <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="pelaporan.html">Pelaporan</a></li>
+                      <li><a href="<?php echo base_url();?>Pelaporan">Pelaporan</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-truck"></i> Mutasi <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="mutasi.html">Mutasi</a></li>
+                      <li><a href="<?php echo base_url();?>Mutasi">Mutasi Barang</a></li>
+                      <li><a href="<?php echo base_url();?>Mutasi/ruangan">Mutasi Ruangan</a></li>
                     </ul>
-                  </li>-->
+                  </li>
                 </ul>
               </div>
 
@@ -164,7 +165,7 @@
                       
                       
                       <div class="form-group">
-                        <label class="col-md-3 col-sm-3 col-xs-12 control-label">Status
+                        <label class="col-md-3 col-sm-3 col-xs-12 control-label">Kondisi
                         </label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
                           <div class="radio">

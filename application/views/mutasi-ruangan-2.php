@@ -149,12 +149,12 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Ubah Ruangan</h2>
+                    <h2>Mutasi Ruangan</h2>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
                     <br />
-                    <form class="form-horizontal form-label-left" method="post" action = "<?php echo base_url();?>ruangan/doEdit">
+                    <form class="form-horizontal form-label-left" method="post" action = "<?php echo base_url();?>mutasi/doEditRuangan">
 
                       
                       <input type="hidden" name="idRuangan" value= '<?php echo $idRuangan ;?>'/>

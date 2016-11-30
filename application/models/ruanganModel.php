@@ -20,6 +20,14 @@ class ruanganModel extends CI_Model {
                 $query = $this->db->get();
                 return $query->result_array();
         }
+        public function getWhereFakultas($data)
+        {       
+                $this->db->select('*');
+                $this->db->where('namaUser',$data);
+                $this->db->from('ruangan');
+                $query = $this->db->get();
+                return $query->result_array();
+        }
 
         public function tambahRuangan($data)
         {

@@ -161,7 +161,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Ubah Ruangan</small></h2>
+                    <h2>Mutasi Ruangan</small></h2>
                     
                     <div class="clearfix"></div>
                   </div>
@@ -189,7 +189,7 @@
                           <td><?php echo $value['namaGedung']?></td>
                           <td><?php echo $value['namaUser']; ?></td>
                           <td><?php echo $value['idRuangan']; ?></td>
-                          <td><a href="<?php echo base_url().'Ruangan/edit2/'.$value['idRuangan'];?>">Edit</a></td>
+                          <td><a href="<?php echo base_url().'Mutasi/ruangan2/'.$value['idRuangan'];?>">Mutasi</a></td>
                         </tr>
                       <?php endforeach ?>
                       </tbody>

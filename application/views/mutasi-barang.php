@@ -153,7 +153,6 @@
                 
               </div>
             </div>
-
             <div class="clearfix"></div>
 
 
@@ -161,7 +160,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Ubah Ruangan</small></h2>
+                    <h2>Mutasi Barang</small></h2>
                     
                     <div class="clearfix"></div>
                   </div>
@@ -171,11 +170,9 @@
                     <table id="datatable-checkbox" class="table table-striped table-bordered bulk_action">
                       <thead>
                         <tr>
-                          <th>Id Ruangan</th>
-                          <th>Nama Ruangan</th>
-                          <th>Nama Gedung</th>
-                          <th>Fakultas</th>
-                          <th>Jumlah Barang</th>
+                          <th>Id Barang</th>
+                          <th>Nama Barang</th>
+                          <th>Ruangan Barang</th>
                           <th>Action</th>
                         </tr>
                       </thead>
@@ -184,12 +181,10 @@
                       <tbody>
                       <?php foreach ($datane as $value): ?>
                         <tr>
-                          <td><?php echo $value['idRuangan']; ?></td>
+                          <td><?php echo $value['idBarang']; ?></td>
+                          <td><?php echo $value['namaBarang']; ?></td>
                           <td><?php echo $value['namaRuangan']; ?></td>
-                          <td><?php echo $value['namaGedung']?></td>
-                          <td><?php echo $value['namaUser']; ?></td>
-                          <td><?php echo $value['idRuangan']; ?></td>
-                          <td><a href="<?php echo base_url().'Ruangan/edit2/'.$value['idRuangan'];?>">Edit</a></td>
+                          <td><a href="<?php echo base_url().'Mutasi/barang2/'.$value['idBarang'];?>">Mutasi</a></td>
                         </tr>
                       <?php endforeach ?>
                       </tbody>
