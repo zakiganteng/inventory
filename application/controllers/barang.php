@@ -89,16 +89,20 @@ class Barang extends CI_Controller {
 		session_destroy();
 		redirect('Welcome');
 	}
+
+	
 	public function fakultas()
-	{
+	{	
 		$data['namaUser'] = $this->session->userdata('namaUser');
-		$data['datane'] = $this->barangModel->selectBarang();
+		$data['datane'] = $this->barangModel->tampilFakultas($data['namaUser']);
+		
 		$this->load->view('fakultas/barang-lihat',$data);
 	}
+
 	public function editFakultas()
 	{	
 		$data['namaUser'] = $this->session->userdata('namaUser');
-		$data['datane'] = $this->barangModel->selectBarang();
+		$data['datane'] = $this->barangModel->tampilFakultas($data['namaUser']);
 		$this->load->view('fakultas/barang-ubah',$data);
 	}
 	public function edit2Fakultas($data_)
@@ -115,7 +119,7 @@ class Barang extends CI_Controller {
 	public function hapusFakultas()
 	{	
 		$data['namaUser'] = $this->session->userdata('namaUser');
-		$data['datane'] = $this->barangModel->selectBarang();
+		$data['datane'] = $this->barangModel->tampilFakultas($data['namaUser']);
 		$this->load->view('fakultas/barang-hapus',$data);
 	}
 	public function doHapusFakultas($data_)
